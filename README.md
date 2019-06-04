@@ -1,3 +1,3 @@
-# React Next TS Boilerplate
+# React Platform
 
-#### React Typescript
+#### WIP
