@@ -9,17 +9,17 @@ import Loader from "../components/Loader/Loader"
 
 import { IProps } from "./__types/IProps"
 
-const DashboardComponent = React.lazy(() => import("../screens/Dashboard/DashboardComponent"))
+const App = React.lazy(() => import("../App/App"))
 
 const LoginRoute = () => <div>WIP</div>
-const DashboardRoute = () => <Route exact path="/" component={DashboardComponent} />
+const BaseRoute = () => <Route exact path="/" component={App} />
 
 const MainRoute = ({ authToken }: IProps): JSX.Element => (
 	<Router>
 		<React.Suspense fallback={<Loader />}>
 			<Switch>
 				<PublicRoute exact path="/login" isUnAuth={!authToken} component={LoginRoute} />
-				<AuthRoute path="/" isAuth={!!authToken} component={DashboardRoute} />
+				<AuthRoute path="/" isAuth={!!authToken} component={BaseRoute} />
 			</Switch>
 		</React.Suspense>
 	</Router>
