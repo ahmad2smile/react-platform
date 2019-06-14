@@ -1,11 +1,9 @@
-import { WithStyles } from "@material-ui/core/styles"
+import { StyledComponentProps } from "@material-ui/core/styles"
 
 import { IRow } from "../../__types/IRow"
-
-import styles from "../styles"
 import { IHead } from "../../__types/IHead"
 
-export interface IProps<TRow extends IRow, THead extends IHead> extends WithStyles<typeof styles> {
+export interface IProps<TRow extends IRow, THead extends IHead> extends StyledComponentProps {
 	readonly rows: ReadonlyArray<TRow>
 	readonly handleSelectClick?: React.ChangeEventHandler
 	readonly orderBy: string

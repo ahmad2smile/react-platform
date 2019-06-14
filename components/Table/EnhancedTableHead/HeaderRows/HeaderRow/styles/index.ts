@@ -1,16 +1,14 @@
-import { createStyles } from "@material-ui/core"
-import { StyleRules, StyleRulesCallback } from "@material-ui/core/styles/withStyles"
+import { createStyles, Theme } from "@material-ui/core"
+import { StyleRules, Styles } from "@material-ui/core/styles/withStyles"
+import { IProps } from "../__types/IProps"
 
-const styles: StyleRulesCallback = (): StyleRules =>
+export const styles: Styles<Theme, IProps, ""> = (): StyleRules =>
 	createStyles({
-		root   : {},
 		toolTip: {
-			display       : "flex",
+			display: "flex",
 			justifyContent: "flex-end"
 		},
 		header: {
 			background: "red"
 		}
 	})
-
-export default styles

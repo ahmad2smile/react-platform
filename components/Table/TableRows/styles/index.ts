@@ -1,9 +1,13 @@
-import { createStyles } from "@material-ui/core"
+import { createStyles, Theme } from "@material-ui/core"
 import { StyleRules, StyleRulesCallback } from "@material-ui/core/styles/withStyles"
 
-const styles: StyleRulesCallback = (): StyleRules =>
+import { IProps } from "../__types/IProps"
+import { IRow } from "../../__types/IRow"
+import { IHead } from "../../__types/IHead"
+
+const styles: StyleRulesCallback<Theme, IProps<IRow, IHead>> = (): StyleRules =>
 	createStyles({
-		root     : {},
+		root: {},
 		tableCell: {
 			textAlign: "center"
 		}

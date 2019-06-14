@@ -8,7 +8,7 @@ import { withStyles } from "@material-ui/core/styles"
 import { IProps } from "./__types/IProps"
 import { HeaderRowValues } from "./__types/HeaderRowValues"
 
-import styles from "./styles/"
+import { styles } from "./styles/"
 
 const createSortHandler: Function = (property: number, onRequestSort: Function): Function => (
 	event: Event
