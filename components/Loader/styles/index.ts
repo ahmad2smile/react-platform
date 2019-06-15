@@ -1,4 +1,4 @@
-import { Colors } from "../../../theme"
+import { Theme } from "../../../theme"
 
 import { IProps } from "../__types/IProps"
 import { IReactStyle } from "../__types/IReactStyle"
@@ -13,13 +13,11 @@ const react: IReactStyle = {
 }
 
 // tslint:disable-next-line:no-any
-export const styles: any = {
+export const styles: any = (theme: typeof Theme) => ({
 	container: {
-		width: "100%",
-		height: "100%",
 		position: "relative",
 		top: "45%",
-		left: "50%"
+		left: "40%"
 	},
 	barsContainer: {
 		width: 50,
@@ -32,27 +30,27 @@ export const styles: any = {
 		"20%": { transform: "scaleY(1)" }
 	},
 	defaultRect: {
-		backgroundColor: ({ color }: IProps): string => color || Colors.primary,
+		backgroundColor: ({ color }: IProps): string => color || theme.primary,
 		extend: react
 	},
 	rect2: {
 		extend: react,
-		backgroundColor: ({ color }: IProps): string => color || Colors.primary,
+		backgroundColor: ({ color }: IProps): string => color || theme.primary,
 		animationDelay: `-${LoaderValues.animationDuration - LoaderValues.react2Delay}s`
 	},
 	rect3: {
 		extend: react,
-		backgroundColor: ({ color }: IProps): string => color || Colors.primary,
+		backgroundColor: ({ color }: IProps): string => color || theme.primary,
 		animationDelay: `-${LoaderValues.animationDuration - LoaderValues.react3Delay}s`
 	},
 	rect4: {
 		extend: react,
-		backgroundColor: ({ color }: IProps): string => color || Colors.primary,
+		backgroundColor: ({ color }: IProps): string => color || theme.primary,
 		animationDelay: `-${LoaderValues.animationDuration - LoaderValues.react4Delay}s`
 	},
 	rect5: {
 		extend: react,
-		backgroundColor: ({ color }: IProps): string => color || Colors.primary,
+		backgroundColor: ({ color }: IProps): string => color || theme.primary,
 		animationDelay: `-${LoaderValues.animationDuration - LoaderValues.react5Delay}s`
 	}
-}
+})

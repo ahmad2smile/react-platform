@@ -1,5 +1,5 @@
 import * as React from "react"
-import { StyledComponentProps } from "react-jss"
+import { StyledComponentProps } from "@material-ui/core/styles"
 
 export interface IProps extends StyledComponentProps {
 	readonly checked?: boolean

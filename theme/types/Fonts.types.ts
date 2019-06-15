@@ -2,13 +2,14 @@ import { GridSpacing } from "@material-ui/core/Grid"
 
 export interface IType {
 	readonly base: string
-	readonly bold: string
-	readonly digital: string
-	readonly emphasis: string
 }
 
 export interface IIconSize {
 	readonly medium: number
+	readonly small: number
+	readonly mini: number
+	readonly width: number
+	readonly height: number
 }
 
 export interface ISize {
@@ -17,47 +18,21 @@ export interface ISize {
 	readonly h3: string
 	readonly h4: string
 	readonly h5: string
-	readonly h6: string
-	readonly icon: string
-	readonly input: string
-	readonly medium: string
+	readonly caption: string
 	readonly regular: string
-	readonly small: string
-	readonly tiny: string
+	readonly label: string
 }
 
 export interface IStyle {
 	readonly dashboardGridSpacing: GridSpacing
-	readonly description: {
-		readonly fontFamily: string
-		readonly fontSize: string
-	}
-	readonly h1: {
-		readonly fontFamily: string
-		readonly fontSize: string
-	}
-	readonly h2: {
-		readonly fontSize: string
-		readonly fontWeight: string
-	}
-	readonly h3: {
-		readonly fontFamily: string
-		readonly fontSize: string
-	}
-	readonly h4: {
-		readonly fontFamily: string
-		readonly fontSize: string
-	}
-	readonly h5: {
-		readonly fontFamily: string
-		readonly fontSize: string
-	}
-	readonly h6: {
-		readonly fontFamily: string
-		readonly fontSize: string
-	}
-	readonly normal: {
-		readonly fontFamily: string
-		readonly fontSize: string
-	}
+	readonly h1: React.CSSProperties
+	readonly h2: React.CSSProperties
+	readonly h3: React.CSSProperties
+	readonly h4: React.CSSProperties
+	readonly h5: React.CSSProperties
+	readonly caption: React.CSSProperties
+	readonly label: React.CSSProperties
+	readonly regular: React.CSSProperties
+	readonly lightText: React.CSSProperties
+	readonly linkText: React.CSSProperties
 }

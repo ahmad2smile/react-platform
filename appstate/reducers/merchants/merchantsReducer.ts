@@ -6,7 +6,7 @@ import {
 	MerchantsGetErrorAction
 } from "../../actions/merchants/__types/IActions"
 
-import { API } from "../../../__typings__/api"
+import { API } from "../../../__types/api"
 
 export const initialState: IMerchants = {
 	merchants: [],
@@ -14,7 +14,10 @@ export const initialState: IMerchants = {
 	merchantsGetError: ""
 }
 
-export function merchantsReducer(state: IMerchants = initialState, action: MerchantsActions): IMerchants {
+export function merchantsReducer(
+	state: IMerchants = initialState,
+	action: MerchantsActions
+): IMerchants {
 	return (
 		{
 			[MerchantsTypes.MERCHANTS_GET_REQUEST]: {

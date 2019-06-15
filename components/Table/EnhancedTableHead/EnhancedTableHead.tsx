@@ -10,7 +10,7 @@ import InputField from "../../InputField/InputField"
 
 import { IProps } from "./__types/IProps"
 import { IHead } from "../__types/IHead"
-import { InputTypes } from "../../../utils/models/InputTypes"
+import { InputTypes } from "../../../models/InputTypes"
 
 function EnhancedTableHead<THead extends IHead>({
 	handleSelectClick,
@@ -41,7 +41,12 @@ function EnhancedTableHead<THead extends IHead>({
 						</Typography>
 					</TableCell>
 				)}
-				<HeaderRows rows={columns} orderBy={orderBy} orderType={orderType} onRequestSort={onRequestSort} />
+				<HeaderRows
+					rows={columns}
+					orderBy={orderBy}
+					orderType={orderType}
+					onRequestSort={onRequestSort}
+				/>
 			</TableRow>
 		</TableHead>
 	)

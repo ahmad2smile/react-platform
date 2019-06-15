@@ -1,19 +1,38 @@
-import * as React from "react"
+import { ColorResult } from "react-color"
 import { StyledComponentProps } from "react-jss"
+import { BaseFieldProps, WrappedFieldMetaProps } from "redux-form"
 
-import { InputTypes } from "../../../utils/models/InputTypes"
+// tslint:disable:readonly-array
 
-export interface IProps extends StyledComponentProps {
-	readonly input?: {
-		readonly onBlur?: (event: React.FocusEvent) => void
-		readonly onChange?: (event: React.ChangeEvent) => void
-	}
-	readonly value?: string
+export interface IProps<TValue = string | string[] | number | boolean | ArrayBuffer | IStartEndOfWeek>
+	extends StyledComponentProps,
+		Partial<BaseFieldProps<IProps<TValue>>> {
 	readonly checked?: boolean
-	readonly inputType: InputTypes
-	readonly meta?: {
-		readonly touched: boolean
-		readonly error: string
-		readonly warning: string
-	}
+	readonly closeMenuOnSelect?: boolean
+	readonly enableBackDates?: boolean
+	readonly isMulti?: boolean
+	readonly name?: string
+	readonly placeholder?: string
+	readonly label?: string
+	readonly input?: IInput<TValue>
+	readonly options?: ReadonlyArray<IDefaultDataType>
+	readonly meta?: Partial<WrappedFieldMetaProps>
+	readonly inputType?: InputTypes
+	readonly showDropDownArrowIcons?: boolean
+	readonly selectBackgroundColor?: string
+	readonly dropDownIndicatorColor?: string
+	readonly startDate?: string
+	readonly endDate?: string
+	readonly children?: React.ReactNode
+}
+
+interface IInput<TValue> {
+	readonly name?: string
+	readonly checked?: boolean
+	readonly value?: TValue
+	onDragStart?(value: TValue | React.DragEvent<HTMLInputElement | HTMLTextAreaElement | Element>): void
+	onDrop?(value: TValue | React.DragEvent<HTMLInputElement | HTMLTextAreaElement | Element>): void
+	onFocus?(value: TValue | React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | Element>): void
+	onChange?(value: TValue | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | Element> | ColorResult | IStartEndOfWeek): void
+	onBlur?(value: TValue | React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | Element>): void
 }

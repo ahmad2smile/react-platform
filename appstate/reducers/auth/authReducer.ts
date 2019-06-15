@@ -1,8 +1,12 @@
 import { AuthTypes } from "../../types/authTypes"
 
-import { AuthActions, LoginSuccessAction, LoginErrorAction } from "../../actions/auth/__types/IActions"
+import {
+	AuthActions,
+	LoginSuccessAction,
+	LoginErrorAction
+} from "../../actions/auth/__types/IActions"
 
-import { API } from "../../../__typings__/api"
+import { API } from "../../../__types/api"
 
 export const initialState: IAuth = {
 	authToken: "SomeToken",

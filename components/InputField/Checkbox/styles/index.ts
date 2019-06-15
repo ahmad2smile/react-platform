@@ -1,12 +1,11 @@
-import { Colors } from "../../../../theme"
+import { createStyles, Theme } from "@material-ui/core"
 
-export default {
+export const styles = (theme: Theme) =>
+	createStyles({
 	root: {
-		padding: 0,
-		color: Colors.primary,
-		"&$checked": {
-			color: Colors.primary
-		}
+		color: `${theme.palette.secondary.main}!important`
 	},
-	checked: {}
-}
+	checked: {
+		color: `${theme.palette.secondary.main}!important`
+	}
+	})

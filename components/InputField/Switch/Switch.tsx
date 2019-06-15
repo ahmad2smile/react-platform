@@ -1,6 +1,6 @@
 import * as React from "react"
-import useSheet from "react-jss"
 import Switch from "@material-ui/core/Switch"
+import { withStyles } from "@material-ui/core"
 
 import { styles } from "./styles"
 
@@ -35,10 +35,17 @@ class Checkbox extends React.Component<IProps, IState> {
 
 		return (
 			<div className={classes.container}>
-				<Switch onBlur={onBlur} checked={toggle} onChange={this.toggle} color="default" />
+				<Switch
+					classes={{
+						checked: classes.checked
+					}}
+					onBlur={onBlur}
+					checked={toggle}
+					onChange={this.toggle}
+					color="default"
+				/>
 			</div>
 		)
 	}
 }
-
-export default useSheet(styles)(Checkbox)
+export default withStyles(styles)(Checkbox)

@@ -11,7 +11,7 @@ import { Values } from "./__types/Values"
 
 import styles from "./styles/"
 import { IHead } from "../__types/IHead"
-import { InputTypes } from "../../../utils/models/InputTypes"
+import { InputTypes } from "../../../models/InputTypes"
 
 function stableSort<TRow extends IRow>(
 	array: ReadonlyArray<TRow>,

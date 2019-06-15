@@ -2,10 +2,11 @@
 
 import axios from "axios"
 
-export const appBaseUrl = process.env.HOST_ADDRESS
+export const appBaseUrl =
+	process.env.NODE_ENV !== "production" ? "http://localhost:3001" : "https://jsonplaceholder.typicode.com"
 
-const apiV2 = axios.create({
-	baseURL: `${appBaseUrl}/api/v2`,
+const api = axios.create({
+	baseURL: appBaseUrl,
 	timeout: 15000,
 	headers: {
 		"Content-Type": "application/json"
@@ -24,30 +25,10 @@ export function runGqlQueries(query: string, token: string) {
 	return apiGq.post(null, { query })
 }
 
-export function loginUser(credentials: string) {
-	return apiV2.post("/user/login", credentials)
-}
+export function getPosts({ limit = 10, offset = 0, filter = "" }) {
+	if (filter) {
+		return api.get(`/merchants?q=${filter}`)
+	}
 
-export function getMerchants() {
-	return apiV2.post("/users")
-}
-
-export function createNewMerchant(payload: string, token: string) {
-	apiV2.defaults.headers = { "x-access-token": token }
-
-	return apiV2.post("/merchants", payload)
-}
-
-export function updateMerchant(payload: { readonly [key: string]: string }, token: string) {
-	apiV2.defaults.headers = { "x-access-token": token }
-	const { id, data } = payload
-
-	return apiV2.put(`/merchants/${id}`, data)
-}
-
-export function deleteMerchant(payload: { readonly [key: string]: string }, token: string) {
-	apiV2.defaults.headers = { "x-access-token": token }
-	const { id } = payload
-
-	return apiV2.delete(`/merchants/${id}`)
+	return api.get(`/merchants?_page=${offset}&_limit=${limit}`)
 }
