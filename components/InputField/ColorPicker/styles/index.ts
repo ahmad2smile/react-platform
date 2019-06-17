@@ -9,7 +9,7 @@ export const styles = (theme: typeof Theme) => ({
 		background: "#fff",
 		borderRadius: 4,
 		borderStyle: "solid",
-		borderColor: theme.primaryDark,
+		borderColor: theme.colors.primaryDark,
 		boxSizing: "border-box",
 		display: "flex",
 		alignItems: "center",
@@ -33,7 +33,7 @@ export const styles = (theme: typeof Theme) => ({
 				return (props.color as any).hex
 			}
 
-			return theme.secondaryLight
+			return theme.colors.secondaryLight
 		}
 	},
 	popover: {

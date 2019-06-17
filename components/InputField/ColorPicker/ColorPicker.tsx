@@ -53,9 +53,9 @@ class ColorPicker extends React.Component<IProps, IState> {
 				<div className={classes.swatch} onClick={this.handleClick}>
 					<div className={classes.color} />
 					{displayColorPicker ? (
-						<ChevronUpIcon size={Fonts.iconSize.small} color={theme.icons} />
+						<ChevronUpIcon size={Fonts.iconSize.small} color={theme.colors.icons} />
 					) : (
-						<ChevronDownIcon size={Fonts.iconSize.small} color={theme.icons} />
+						<ChevronDownIcon size={Fonts.iconSize.small} color={theme.colors.icons} />
 					)}
 				</div>
 

@@ -101,7 +101,7 @@ const style: IStyle = {
 		lineHeight: "normal",
 		fontSize: size.regular,
 		textTransform: "uppercase",
-		color: Theme.info
+		color: Theme.colors.info
 	},
 	regular: {
 		fontFamily: type.base,

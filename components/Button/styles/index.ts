@@ -2,15 +2,15 @@ import { IProps } from "../__types/IProps"
 import { Values } from "../__types/Values"
 
 // tslint:disable-next-line:no-any
-export const styles: any = (theme: IThemeColors) => ({
+export const styles: any = (theme: ITheme) => ({
 	button: {
-		color: ({ outline }: IProps) => (outline ? theme.info : theme.primary),
+		color: ({ outline }: IProps) => (outline ? theme.colors.info : theme.colors.primary),
 		background: ({ disabled, outline }: IProps) =>
 			disabled
-				? theme.primaryLight
+				? theme.colors.primaryLight
 				: outline
-				? theme.primary
-				: theme.secondary,
+				? theme.colors.primary
+				: theme.colors.secondary,
 		padding: ({ padding }: IProps) => padding || "0px",
 		width: ({ width, buttonType }: IProps) =>
 			buttonType === "square" ? 50 : width || Values.defaultWidth,
@@ -23,11 +23,11 @@ export const styles: any = (theme: IThemeColors) => ({
 		justifyContent: "center",
 		alignItems: "center",
 		display: "flex",
-		borderColor: theme.secondary,
+		borderColor: theme.colors.secondary
 	},
 	addBtn: {
 		background: ({ color, disabled }: IProps) =>
-			disabled ? "#ccc" : color || theme.secondary,
+			disabled ? "#ccc" : color || theme.colors.secondary,
 		width: "97px",
 		height: "41px",
 		display: "flex",
@@ -37,22 +37,21 @@ export const styles: any = (theme: IThemeColors) => ({
 		cursor: "pointer",
 		font: "normal bold 14px/19px Roboto",
 		margin: "13px 20px",
-		borderRadius: "3px",
+		borderRadius: "3px"
 	},
 	span: {
 		font: "normal bold 14px/19px Roboto",
-		color: theme.primary,
+		color: theme.colors.primary,
 		padding: "12px 16px 10px 7px",
-		alignItems: "center",
+		alignItems: "center"
 	},
 	icon: {
-		margin: "12px 0px 10px 16px",
+		margin: "12px 0px 10px 16px"
 	},
 	outline: {
 		border: ({ borderColor }: IProps) =>
 			borderColor ? `1px solid ${borderColor}` : " 1px solid #E8ECEF",
-		background: ({ background }: IProps) =>
-			background ? background : theme.primary,
+		background: ({ background }: IProps) => (background ? background : theme.colors.primary),
 		borderRadius: "3px",
 		position: "inherit",
 		cursor: "pointer",
@@ -60,9 +59,8 @@ export const styles: any = (theme: IThemeColors) => ({
 		height: "40px",
 		margin: ({ margin }: IProps) => (margin ? margin : "5px"),
 		font: "normal normal 14px/19px Roboto",
-		padding: ({ padding }: IProps) =>
-			padding ? padding : "12px 15px 9px 16px",
-		color: ({ color }: IProps) => (color ? color : "#7C8081"),
+		padding: ({ padding }: IProps) => (padding ? padding : "12px 15px 9px 16px"),
+		color: ({ color }: IProps) => (color ? color : "#7C8081")
 	},
 	danger: {
 		width: "96px",
@@ -71,11 +69,10 @@ export const styles: any = (theme: IThemeColors) => ({
 		textAlign: "center",
 		letterSpacing: "0.3px",
 		textTransform: "uppercase",
-		borderColor: theme.primary,
-		backgroundColor: ({ outline }: IProps) =>
-			outline ? theme.primary : "red",
-		color: ({ outline }: IProps) => (outline ? "red" : theme.primary),
+		borderColor: theme.colors.primary,
+		backgroundColor: ({ outline }: IProps) => (outline ? theme.colors.primary : "red"),
+		color: ({ outline }: IProps) => (outline ? "red" : theme.colors.primary),
 		margin: ({ margin }: IProps) => (margin ? margin : "7px"),
-		outline: "none",
-	},
+		outline: "none"
+	}
 })

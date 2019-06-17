@@ -8,12 +8,11 @@ interface IProps {
 	readonly className?: string
 }
 
-const PlusIcon: React.SFC<IProps> = (
-	{
-		color = Theme.secondary,
-		size = Fonts.iconSize.mini ,
-		className
-	}: IProps): JSX.Element => (
+const PlusIcon: React.SFC<IProps> = ({
+	color = Theme.colors.secondary,
+	size = Fonts.iconSize.mini,
+	className
+}: IProps): JSX.Element => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width={size}

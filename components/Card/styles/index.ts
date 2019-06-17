@@ -4,7 +4,9 @@ import { Theme } from "../../../theme"
 
 import { IProps } from "../__types/IProps"
 
-export const styles: (theme: typeof Theme) => Styles<undefined, IProps> = (theme: typeof Theme) => ({
+export const styles: (theme: typeof Theme) => Styles<undefined, IProps> = (
+	theme: typeof Theme
+) => ({
 	container: {
 		backgroundColor: "#fff",
 		color: "#fff",
@@ -18,7 +20,8 @@ export const styles: (theme: typeof Theme) => Styles<undefined, IProps> = (theme
 	headingContainer: {
 		display: "flex",
 		justifyContent: "space-between",
-		backgroundColor: ({ Heading }: IProps) => (Heading && theme.secondaryLight) || theme.primary,
+		backgroundColor: ({ Heading }: IProps) =>
+			(Heading && theme.colors.secondaryLight) || theme.colors.primary,
 		height: 50
 	},
 	leftHeading: {

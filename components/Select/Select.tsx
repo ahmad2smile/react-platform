@@ -9,7 +9,9 @@ import ChevronDownIcon from "../Icons/ChevronDownIcon"
 import { dropDownArrowIconsStyles, getSelectStyles } from "./styles"
 import { IProps } from "./__types/IProps"
 
-const getDropdownArrowIndicator = (dropDownIndicatorColor: string = Theme.icons) => (props: IProps<IDefaultDataType>) => (
+const getDropdownArrowIndicator = (dropDownIndicatorColor: string = Theme.colors.icons) => (
+	props: IProps<IDefaultDataType>
+) => (
 	<components.DropdownIndicator {...props}>
 		<div style={dropDownArrowIconsStyles}>
 			<ArrowDropUpIcon color={dropDownIndicatorColor} />
@@ -20,16 +22,18 @@ const getDropdownArrowIndicator = (dropDownIndicatorColor: string = Theme.icons)
 
 const DropdownDefaultIndicator = (props: IProps<IDefaultDataType>) => (
 	<components.DropdownIndicator {...props}>
-		<ChevronDownIcon color={Theme.icons} />
+		<ChevronDownIcon color={Theme.colors.icons} />
 	</components.DropdownIndicator>
 )
 
-function onHandlerFormatter<TData extends IDefaultDataType> (handler: (value: TData) => void) {
+function onHandlerFormatter<TData extends IDefaultDataType>(handler: (value: TData) => void) {
 	return (selected: { readonly value: IDefaultDataType; readonly label: string }) =>
-		selected ? handler(selected.value as TData) : handler(({ id: 0, name: "" } as unknown) as TData)
+		selected
+			? handler(selected.value as TData)
+			: handler(({ id: 0, name: "" } as unknown) as TData)
 }
 
-function Select<TData extends IDefaultDataType> ({
+function Select<TData extends IDefaultDataType>({
 	input: { onFocus, onChange, value },
 	meta: { error, touched },
 	showDropDownArrowIcons,
@@ -46,8 +50,10 @@ function Select<TData extends IDefaultDataType> ({
 			onFocus={onFocus}
 			onChange={onHandlerFormatter(onChange)}
 			components={{
-				DropdownIndicator: showDropDownArrowIcons ? getDropdownArrowIndicator(dropDownIndicatorColor) : DropdownDefaultIndicator,
-				ClearIndicator   : components.ClearIndicator
+				DropdownIndicator: showDropDownArrowIcons
+					? getDropdownArrowIndicator(dropDownIndicatorColor)
+					: DropdownDefaultIndicator,
+				ClearIndicator: components.ClearIndicator
 			}}
 			styles={getSelectStyles(error, touched, showDropDownArrowIcons, selectBackgroundColor)}
 			invalidMessage={error}
@@ -67,27 +73,27 @@ function Select<TData extends IDefaultDataType> ({
 // tslint:disable-next-line:no-object-mutation
 Select.defaultProps = {
 	input: {
-		onBlur     : () => {},
-		onChange   : () => {},
+		onBlur: () => {},
+		onChange: () => {},
 		onDragStart: () => {},
-		onDrop     : () => {},
-		onFocus    : () => {}
+		onDrop: () => {},
+		onFocus: () => {}
 	},
 	meta: {
-		autofilled     : false,
+		autofilled: false,
 		asyncValidating: false,
-		dirty          : false,
+		dirty: false,
 		// tslint:disable-next-line:no-any
-		dispatch       : (action: any) => action,
-		form           : "",
-		initial        : "",
-		invalid        : false,
-		pristine       : true,
-		submitting     : false,
-		submitFailed   : false,
-		touched        : false,
-		valid          : true,
-		visited        : false
+		dispatch: (action: any) => action,
+		form: "",
+		initial: "",
+		invalid: false,
+		pristine: true,
+		submitting: false,
+		submitFailed: false,
+		touched: false,
+		valid: true,
+		visited: false
 	}
 }
 

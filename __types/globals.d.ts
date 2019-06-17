@@ -71,6 +71,15 @@ interface IStartEndOfWeek {
 	readonly endDate: string
 }
 
+interface ITheme {
+	readonly sizes: IThemeSizes
+	readonly colors: IThemeColors
+}
+
+interface IThemeSizes {
+	readonly container: number | string
+}
+
 interface IThemeColors {
 	readonly primary: string
 	readonly primaryLight: string

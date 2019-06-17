@@ -8,9 +8,9 @@ export const styles: any = (theme: typeof Theme) => ({
 	content: {
 		background: ({ alertLevel }: IProps) =>
 			({
-				Success: theme.primary,
-				Warning: theme.secondary,
-				Error: theme.danger
+				Success: theme.colors.primary,
+				Warning: theme.colors.secondary,
+				Error: theme.colors.danger
 			}[alertLevel])
 	},
 	messageContainer: {

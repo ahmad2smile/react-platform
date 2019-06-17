@@ -30,27 +30,27 @@ export const styles: any = (theme: typeof Theme) => ({
 		"20%": { transform: "scaleY(1)" }
 	},
 	defaultRect: {
-		backgroundColor: ({ color }: IProps): string => color || theme.primary,
+		backgroundColor: ({ color }: IProps): string => color || theme.colors.primary,
 		extend: react
 	},
 	rect2: {
 		extend: react,
-		backgroundColor: ({ color }: IProps): string => color || theme.primary,
+		backgroundColor: ({ color }: IProps): string => color || theme.colors.primary,
 		animationDelay: `-${LoaderValues.animationDuration - LoaderValues.react2Delay}s`
 	},
 	rect3: {
 		extend: react,
-		backgroundColor: ({ color }: IProps): string => color || theme.primary,
+		backgroundColor: ({ color }: IProps): string => color || theme.colors.primary,
 		animationDelay: `-${LoaderValues.animationDuration - LoaderValues.react3Delay}s`
 	},
 	rect4: {
 		extend: react,
-		backgroundColor: ({ color }: IProps): string => color || theme.primary,
+		backgroundColor: ({ color }: IProps): string => color || theme.colors.primary,
 		animationDelay: `-${LoaderValues.animationDuration - LoaderValues.react4Delay}s`
 	},
 	rect5: {
 		extend: react,
-		backgroundColor: ({ color }: IProps): string => color || theme.primary,
+		backgroundColor: ({ color }: IProps): string => color || theme.colors.primary,
 		animationDelay: `-${LoaderValues.animationDuration - LoaderValues.react5Delay}s`
 	}
 })
