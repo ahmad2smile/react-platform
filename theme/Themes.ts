@@ -2,12 +2,11 @@ import { Theme as MaterialThemeType } from "@material-ui/core"
 import { createMuiTheme } from "@material-ui/core/styles"
 
 import { Colors, DarkColors } from "./Colors"
+import { Sizes } from "./Sizes"
 
 // tslint:disable-next-line:no-let
 export let Theme: ITheme = {
-	sizes: {
-		container: 1200
-	},
+	sizes: Sizes,
 	colors: Colors
 }
 

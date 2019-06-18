@@ -15,7 +15,8 @@
         "strictNullChecks": false,
         "experimentalDecorators": true,
         "noUnusedLocals": true,
-        "noUnusedParameters": true
+        "noUnusedParameters": true,
+        "resolveJsonModule": true
     },
     "include": ["./"]
 }

@@ -1,9 +1,14 @@
-import { StyleCreator } from "react-jss"
+import { Styles } from "react-jss"
+
+import { Sizes } from "../../../theme"
 
 import { IProps } from "../__types/IProps"
 
-export const styles: StyleCreator<undefined, ITheme, IProps> = (theme: ITheme) => ({
+export const styles: Styles<undefined, IProps> = {
 	container: {
-		width: theme.sizes.container
+		display: "flex",
+		height: "100%",
+		margin: "0 auto",
+		width: Sizes.container
 	}
-})
+}
