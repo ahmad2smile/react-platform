@@ -1,8 +1,9 @@
-import { ISize, IStyle, IType, IIconSize } from "./types/Fonts.types"
+import { ISize, IType, IIconSize } from "./types/Fonts.types"
 import { Theme } from "./Themes"
 
 const type: IType = {
-	base: "Roboto"
+	base: "Roboto",
+	classic: "Lora"
 }
 
 enum gridSize {
@@ -39,100 +40,112 @@ const size: ISize = {
 	label: "0.75rem"
 }
 
-const style: IStyle = {
-	dashboardGridSpacing: 10,
-	h1: {
-		fontFamily: type.base,
-		fontStyle: "normal",
-		fontWeight: "bold",
-		lineHeight: "normal",
-		fontSize: size.h1,
-		letterSpacing: "0.2",
-		color: "#1B1E24"
-	},
-	h2: {
-		fontFamily: type.base,
-		fontStyle: "normal",
-		fontWeight: "bold",
-		lineHeight: "normal",
-		fontSize: size.h2,
-		letterSpacing: "0.2",
-		color: "#1B1E24"
-	},
-	h3: {
-		fontFamily: type.base,
-		fontStyle: "normal",
-		fontWeight: "bold",
-		lineHeight: "normal",
-		fontSize: size.h3,
-		letterSpacing: "0.2",
-		color: "#1B1E24"
-	},
-	h4: {
-		fontFamily: type.base,
-		fontStyle: "normal",
-		fontWeight: "bold",
-		lineHeight: "normal",
-		fontSize: size.h4,
-		letterSpacing: "0.2",
-		color: "#1B1E24"
-	},
-	h5: {
-		fontFamily: type.base,
-		fontStyle: "normal",
-		fontWeight: "bold",
-		lineHeight: "normal",
-		fontSize: size.h5,
-		letterSpacing: "0.2",
-		color: "#1B1E24"
-	},
-	caption: {
-		fontFamily: type.base,
-		fontStyle: "normal",
-		fontWeight: 500,
-		lineHeight: "normal",
-		fontSize: size.caption,
-		color: "#1B1E24"
-	},
-	label: {
-		fontFamily: type.base,
-		fontStyle: "normal",
-		fontWeight: 300,
-		lineHeight: "normal",
-		fontSize: size.regular,
-		textTransform: "uppercase",
-		color: Theme.colors.info
-	},
-	regular: {
-		fontFamily: type.base,
-		fontStyle: "normal",
-		fontWeight: 500,
-		lineHeight: "1.3125rem",
-		fontSize: size.regular,
-		color: "#98A9BC"
-	},
-	lightText: {
-		fontFamily: type.base,
-		fontStyle: "normal",
-		fontWeight: 500,
-		lineHeight: "1.3125rem",
-		fontSize: size.regular,
-		color: "#252631"
-	},
-	linkText: {
-		fontFamily: type.base,
-		fontStyle: "normal",
-		fontWeight: 500,
-		lineHeight: "normal",
-		fontSize: size.regular,
-		color: "#252631"
-	}
+const h1Styles: React.CSSProperties = {
+	fontFamily: type.classic,
+	fontWeight: "lighter",
+	fontSize: size.h1,
+	color: "#1B1E24"
+}
+
+const h2Styles: React.CSSProperties = {
+	fontFamily: type.base,
+	fontStyle: "normal",
+	fontWeight: "bold",
+	lineHeight: "normal",
+	fontSize: size.h2,
+	letterSpacing: "0.2",
+	color: "#1B1E24"
+}
+
+const h3Styles: React.CSSProperties = {
+	fontFamily: type.base,
+	fontStyle: "normal",
+	fontWeight: "bold",
+	lineHeight: "normal",
+	fontSize: size.h3,
+	letterSpacing: "0.2",
+	color: "#1B1E24"
+}
+
+const h4Styles: React.CSSProperties = {
+	fontFamily: type.base,
+	fontStyle: "normal",
+	fontWeight: "bold",
+	lineHeight: "normal",
+	fontSize: size.h4,
+	letterSpacing: "0.2",
+	color: "#1B1E24"
+}
+
+const h5Styles: React.CSSProperties = {
+	fontFamily: type.base,
+	fontStyle: "normal",
+	fontWeight: "bold",
+	lineHeight: "normal",
+	fontSize: size.h5,
+	letterSpacing: "0.2",
+	color: "#1B1E24"
+}
+
+const captionStyles: React.CSSProperties = {
+	fontFamily: type.base,
+	fontStyle: "normal",
+	fontWeight: 500,
+	lineHeight: "normal",
+	fontSize: size.caption,
+	color: "#1B1E24"
+}
+
+const labelStyles: React.CSSProperties = {
+	fontFamily: type.base,
+	fontStyle: "normal",
+	fontWeight: 300,
+	lineHeight: "normal",
+	fontSize: size.regular,
+	textTransform: "uppercase",
+	color: Theme.colors.info
+}
+
+const regularStyles: React.CSSProperties = {
+	fontFamily: type.base,
+	fontStyle: "normal",
+	fontWeight: 500,
+	lineHeight: "1.3125rem",
+	fontSize: size.regular,
+	color: "#98A9BC"
+}
+
+const lightTextStyles: React.CSSProperties = {
+	fontFamily: type.base,
+	fontStyle: "normal",
+	fontWeight: 500,
+	lineHeight: "1.3125rem",
+	fontSize: size.regular,
+	color: "#252631"
+}
+
+const linkTextStyles: React.CSSProperties = {
+	fontFamily: type.base,
+	fontStyle: "normal",
+	fontWeight: 500,
+	lineHeight: "normal",
+	fontSize: size.regular,
+	color: "#252631"
 }
 
 export default {
 	type,
 	size,
 	iconSize,
-	style,
-	gridSize
+	gridSize,
+	h1Styles,
+	h2Styles,
+	h3Styles,
+	h4Styles,
+	h5Styles,
+	captionStyles,
+	labelStyles,
+	regularStyles,
+	lightTextStyles,
+	linkTextStyles
 }

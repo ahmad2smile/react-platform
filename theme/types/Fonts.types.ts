@@ -1,7 +1,6 @@
-import { GridSpacing } from "@material-ui/core/Grid"
-
 export interface IType {
 	readonly base: string
+	readonly classic: string
 }
 
 export interface IIconSize {
@@ -21,18 +20,4 @@ export interface ISize {
 	readonly caption: string
 	readonly regular: string
 	readonly label: string
-}
-
-export interface IStyle {
-	readonly dashboardGridSpacing: GridSpacing
-	readonly h1: React.CSSProperties
-	readonly h2: React.CSSProperties
-	readonly h3: React.CSSProperties
-	readonly h4: React.CSSProperties
-	readonly h5: React.CSSProperties
-	readonly caption: React.CSSProperties
-	readonly label: React.CSSProperties
-	readonly regular: React.CSSProperties
-	readonly lightText: React.CSSProperties
-	readonly linkText: React.CSSProperties
 }
