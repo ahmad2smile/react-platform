@@ -1,40 +1,40 @@
 import { Styles } from "react-jss"
 
-export function breakPointXSmall(styles: Styles): Styles {
+export function breakPointXSmallUp(styles: Styles): Styles {
 	return {
-		"@media (max-width: 420px)": {
+		"@media (min-width: 420px)": {
 			...styles
 		}
 	}
 }
 
-export function breakPointSmall(styles: Styles): Styles {
+export function breakPointSmallUp(styles: Styles): Styles {
 	return {
-		"@media (max-width: 560px)": {
+		"@media (min-width: 560px)": {
 			...styles
 		}
 	}
 }
 
-export function breakPointMedium(styles: Styles): Styles {
+export function breakPointMediumUp(styles: Styles): Styles {
 	return {
-		"@media (max-width: 800px)": {
+		"@media (min-width: 800px)": {
 			...styles
 		}
 	}
 }
 
-export function breakPointLarge(styles: Styles): Styles {
+export function breakPointLargeUp(styles: Styles): Styles {
 	return {
-		"@media (max-width: 1000px)": {
+		"@media (min-width: 1100px)": {
 			...styles
 		}
 	}
 }
 
-export function breakPointXLarge(styles: Styles): Styles {
+export function breakPointXLargeUp(styles: Styles): Styles {
 	return {
-		"@media (max-width: 1200px)": {
+		"@media (min-width: 1600px)": {
 			...styles
 		}
 	}
