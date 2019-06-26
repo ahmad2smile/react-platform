@@ -1,3 +1,6 @@
+import config from "../App/config.json"
+
+
 export const Colors = {
 	primary: "#FFFFFF",
 	primaryLight: "#FFFFFF",
@@ -16,7 +19,8 @@ export const Colors = {
 	warning: "#FBC01B",
 	success: "#6DD230",
 	icons: "#778CA2",
-	frost: "#757575"
+	frost: "#757575",
+	...config.theme
 }
 
 export const DarkColors = {
