@@ -10,7 +10,7 @@ export const styles: Styles<undefined, IProps> = {
 		display: "flex",
 		height: "100%",
 		margin: "0 auto",
-		maxWidth: "90%"
+		width: ({ fullTablet }: IProps) => (fullTablet ? "100%" : "90%")
 	},
 	...breakPointLargeUp({
 		container: {
