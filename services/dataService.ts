@@ -1,11 +1,16 @@
 // tslint:disable:no-object-mutation
-
 import axios from "axios"
 
-export const appBaseUrl =
-	process.env.NODE_ENV !== "production" ? "http://localhost:3001" : "https://jsonplaceholder.typicode.com"
+import config from "../App/config.json"
 
-const api = axios.create({
+const apiConfig = config.api
+
+export const appBaseUrl =
+	process.env.NODE_ENV !== "production"
+		? apiConfig.development.baseUrl
+		: apiConfig.production.baseUrl
+
+export const api = axios.create({
 	baseURL: appBaseUrl,
 	timeout: 15000,
 	headers: {
