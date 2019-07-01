@@ -5,10 +5,10 @@ import { IProps } from "./__types/IProps"
 
 import { styles } from "./styles"
 
-const Card = ({ children, classes }: IProps) => (
+const Image = ({ src, alt, classes }: IProps) => (
 	<div className={classes.container}>
-		<div className={classes.content}>{children}</div>
+		<img src={src} alt={alt} className={classes.img} />
 	</div>
 )
 
-export default injectSheet(styles)(Card)
+export default injectSheet(styles)(Image)

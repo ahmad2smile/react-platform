@@ -1,36 +1,23 @@
 import { Styles } from "react-jss"
+import { breakPointSmallUp } from "../../../utils/responsiveHelpers"
 
-import { Theme } from "../../../theme"
-
-import { IProps } from "../__types/IProps"
-
-export const styles: (theme: typeof Theme) => Styles<undefined, IProps> = (
-	theme: typeof Theme
-) => ({
+export const styles: Styles = {
 	container: {
-		backgroundColor: "#fff",
-		color: "#fff",
-		height: "100%",
-		minHeight: 170,
-		minWidth: "23%",
-		width: ((({ width }: IProps) => width || "auto") as unknown) as React.ReactText,
-		boxShadow: "1px 3px 8px 0px #ccc",
-		overflowY: "scroll"
+		flexBasis: "100%",
+		width: "100%",
+		paddingTop: "100%",
+		position: "relative"
 	},
-	headingContainer: {
-		display: "flex",
-		justifyContent: "space-between",
-		backgroundColor: ({ Heading }: IProps) =>
-			(Heading && theme.colors.secondaryLight) || theme.colors.primary,
-		height: 50
-	},
-	leftHeading: {
-		display: "flex"
-	},
-	rightHeading: {
-		display: "flex"
-	},
+	...breakPointSmallUp({
+		container: {
+			flexBasis: "50%"
+		}
+	}),
 	content: {
-		color: "#222"
+		position: "absolute",
+		top: 0,
+		left: 0,
+		bottom: 0,
+		right: 0
 	}
-})
+}

@@ -2,11 +2,12 @@ import { Styles } from "react-jss"
 
 import { IProps } from "../__types/IProps"
 import { NavbarHeight } from "../__types/IValues"
-import { NavBarPosition } from './../../../models/NavBarPosition';
+import { NavBarPosition } from "./../../../models/NavBarPosition"
 
 export const styles: Styles | any = {
 	container: {},
 	navContainer: {
+		display: "flex",
 		width: "100%",
 		height: ({ height }: IProps) => height || (NavbarHeight as any),
 		backgroundColor: "white",
